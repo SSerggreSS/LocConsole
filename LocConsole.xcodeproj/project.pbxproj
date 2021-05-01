@@ -27,7 +27,6 @@
 		A5AA3089263B2BEC0008E45A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5AA3086263B2BEC0008E45A /* Localizable.strings */; };
 		A5AA308A263B2BEC0008E45A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5AA3088263B2BEC0008E45A /* Localizable.strings */; };
 		A5AA308F263B2BF50008E45A /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA308E263B2BF50008E45A /* LocalizationHelper.swift */; };
-		A5AA309C263B308A0008E45A /* main1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA309B263B308A0008E45A /* main1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 		A5AA3087263B2BEC0008E45A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A5AA3088263B2BEC0008E45A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A5AA308E263B2BF50008E45A /* LocalizationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
-		A5AA309B263B308A0008E45A /* main1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A53C85BD263DA26F00E512E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A588F2862639E2C500B23C34 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A53C85BE263DA28600E512E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA3066263B2BCB0008E45A /* ConsoleInputOutput.swift */,
+				A5AA308E263B2BF50008E45A /* LocalizationHelper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A588F2762639E2C500B23C34 = {
 			isa = PBXGroup;
 			children = (
@@ -127,18 +142,16 @@
 			children = (
 				A588F2822639E2C500B23C34 /* AppDelegate.swift */,
 				A588F2842639E2C500B23C34 /* SceneDelegate.swift */,
-				A588F2862639E2C500B23C34 /* ViewController.swift */,
-				A5AA308E263B2BF50008E45A /* LocalizationHelper.swift */,
-				A5AA3066263B2BCB0008E45A /* ConsoleInputOutput.swift */,
+				A588F2882639E2C500B23C34 /* Main.storyboard */,
+				A588F28D2639E2C600B23C34 /* LaunchScreen.storyboard */,
+				A588F2902639E2C600B23C34 /* Info.plist */,
 				A57AAE44263D9E9F005EE737 /* Assets.xcassets */,
-				A5AA309B263B308A0008E45A /* main1.swift */,
+				A53C85BD263DA26F00E512E9 /* View */,
+				A53C85BE263DA28600E512E9 /* Services */,
 				A5AA3085263B2BEC0008E45A /* Localization */,
 				A5AA307B263B2BE30008E45A /* Extension */,
 				A5AA3071263B2BDC0008E45A /* Enums */,
 				A5AA306B263B2BD30008E45A /* Constants */,
-				A588F2882639E2C500B23C34 /* Main.storyboard */,
-				A588F28D2639E2C600B23C34 /* LaunchScreen.storyboard */,
-				A588F2902639E2C600B23C34 /* Info.plist */,
 			);
 			path = LocConsole;
 			sourceTree = "<group>";
@@ -332,7 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A588F2872639E2C500B23C34 /* ViewController.swift in Sources */,
-				A5AA309C263B308A0008E45A /* main1.swift in Sources */,
 				A588F2832639E2C500B23C34 /* AppDelegate.swift in Sources */,
 				A57AAE33263D9949005EE737 /* UIView+cornerRadius.swift in Sources */,
 				A588F2852639E2C500B23C34 /* SceneDelegate.swift in Sources */,
