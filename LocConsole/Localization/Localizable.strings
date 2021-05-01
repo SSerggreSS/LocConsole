@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  loc
+
+  Created by Сергей  Бей on 29.03.2021.
+  
+*/
+
+"HELP" = "
+    in static mode:
+    usage: loc [help] [search] [update] [delete]
+           [<command> -k <key> -l <language>]
+           [update <word> -k <key> -l <language>]
+    example search by key and language:
+    input command: loc search -k hello -l en
+    result: Hello
+    in interactive mode without 'loc'
+    to exit enter the command: q
+";
+"NOT_FOUND" = "Not Found!!!";
+"ENTER_TEXT" = "Enter search localization...";
