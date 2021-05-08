@@ -9,14 +9,14 @@ import Foundation
 
 protocol LocalizationHelperDelegate {
     func sendSearch(resultString: String)
-    func sendWordsByLanguage(_ language: String)
-    func sendWordsBy(key: String)
     func sendWordsByKeyAndLanguage(string: String)
-    func sendError(message: String)
-    func sendSuccessUpdate(message: String)
-    func sendSuccessDelete(message: String)
-    func sendHelp(message: String)
-    func sendGoodBy(message: String)
+//    func sendWordsByLanguage(_ language: String)
+//    func sendWordsBy(key: String)
+//    func sendError(message: String)
+//    func sendSuccessUpdate(message: String)
+//    func sendSuccessDelete(message: String)
+//    func sendHelp(message: String)
+//    func sendGoodBy(message: String)
 }
 
 class LocalizationHelper {
@@ -127,48 +127,48 @@ extension LocalizationHelper {
             delegate?.sendWordsByKeyAndLanguage(string: string)
         case .search where firstKey == .key:
         let string = dictionary.stringWordsByLanguage(firstParam)
-            delegate?.sendWordsBy(key: string)
+            //delegate?.sendWordsBy(key: string)
         case .search where firstKey == .language:
             let string = dictionary.stringWordsByLanguage(firstParam)
-            delegate?.sendWordsByLanguage(string)
+            //delegate?.sendWordsByLanguage(string)
         case .search where itemsCount < 2:
             let string = dictionary.stringFromDictionary()
             delegate?.sendSearch(resultString: string)
         case .update where firstKey == .key && secondKey == .language:
             let string = dictionary.update(word: wordForUpdate, by: firstParam, language: secondParam)
-            delegate?.sendSuccessUpdate(message: string)
+            //delegate?.sendSuccessUpdate(message: string)
             saveDictionaryInUserDefaults()
         case .delete where firstKey == .key && secondKey == .language:
             let string = dictionary.deleteBy(key: firstParam, language: secondParam)
             saveDictionaryInUserDefaults()
-            delegate?.sendSuccessDelete(message: string)
+            //delegate?.sendSuccessDelete(message: string)
         case .delete where firstKey == .key:
             let string = dictionary.deleteBy(key: firstParam)
-            delegate?.sendSuccessDelete(message: string)
+            //delegate?.sendSuccessDelete(message: string)
         case .delete where secondKey == .language:
             let string = dictionary.deleteBy(language: secondParam)
-            delegate?.sendSuccessDelete(message: string)
+            //delegate?.sendSuccessDelete(message: string)
         case .delete:
             dictionary.removeAll()
-            delegate?.sendSuccessDelete(message: "Dictionary removed!!!")
+            //delegate?.sendSuccessDelete(message: "Dictionary removed!!!")
             saveDictionaryInUserDefaults()
         case .unowned:
             consoleIO.writeMessage("I don't know that command \(value)",
                                    to: .error)
             consoleIO.writeMessage("For instruction enter command: help")
             let string = "I don't know that command '\(value)' \nFor instruction enter command: help"
-            delegate?.sendError(message: string)
+            //delegate?.sendError(message: string)
         case .help:
             consoleIO.printHelp()
-            delegate?.sendHelp(message: "HELP".localized)
+            //delegate?.sendHelp(message: "HELP".localized)
         case .q:
             shouldQuit = true
-            delegate?.sendGoodBy(message: "Good bay!")
+            //delegate?.sendGoodBy(message: "Good bay!")
         default:
             consoleIO.writeMessage("Not Found")
             consoleIO.writeMessage("For instruction enter command: help")
             let string = "Not Found \nFor instruction enter command: help"
-            delegate?.sendError(message: string)
+            //delegate?.sendError(message: string)
             break
         }
     }

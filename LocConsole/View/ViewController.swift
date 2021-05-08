@@ -12,27 +12,38 @@ class ViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak var localLabel: UILabel!
     
     let localizationHelper = LocalizationHelper()
-    var textFromTextView = ""
+    var requestForLocalization = "\(CommandType.search.rawValue)"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.delegate = self
+        localLabel.numberOfLines = 0
+        localLabel.sizeToFit()
         localizationHelper.delegate = self
         setupUserInterface()
     }
     
-    
     @IBAction func enterButtonAction(_ sender: UIButton) {
-        localizationHelper.consoleInputProcessing(mode: .staticMode, text: textFromTextView)
+        requestForLocalization += " \(KeyType.key.rawValue) "
+        requestForLocalization.append(textFields[0].text?.lowercased()  ?? "")
+        requestForLocalization += " \(KeyType.language.rawValue) "
+        requestForLocalization.append(textFields[1].text?.lowercased() ?? "")
+        localizationHelper.consoleInputProcessing(mode: .staticMode,
+                                                  text: requestForLocalization)
+        requestForLocalization = "\(CommandType.search.rawValue)"
     }
     
     
     @IBAction func clearButtonAction(_ sender: UIButton) {
-        textView.text.removeAll()
-        textView.text = "ENTER_TEXT".localized
+        textFields.forEach { tf in
+            tf.text?.removeAll()
+        }
+        localLabel.text?.removeAll()
+        textFields.first?.becomeFirstResponder()
+        requestForLocalization = "\(CommandType.search.rawValue)"
     }
     
     func setupUserInterface() {
@@ -41,74 +52,16 @@ class ViewController: UIViewController {
     }
 }
 
-
-
-//MARK: - UITextViewDelegate
-
-extension ViewController: UITextViewDelegate {
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.systemGray2 {
-            textView.text = nil
-            textView.textColor = UIColor.systemGreen
-        }
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let nsString = textView.text as NSString
-        let newString = nsString.replacingCharacters(in: range, with: text)
-        textFromTextView = newString
-        return true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "ENTER_TEXT".localized
-            textView.textColor = UIColor.systemGreen
-        }
-    }
-    
-}
-
-
 //MARK: - LocalizationHelperDelegate
 
 extension ViewController: LocalizationHelperDelegate {
     
-    func sendHelp(message: String) {
-        textView.text = message
-    }
-    
     func sendWordsByKeyAndLanguage(string: String) {
-        textView.text = string
-    }
-    
-    func sendWordsByLanguage(_ language: String) {
-        textView.text = language
-    }
-    
-    func sendWordsBy(key: String) {
-        textView.text = key
+        localLabel.text = string
     }
     
     func sendSearch(resultString: String) {
-        textView.text = resultString
-    }
-    
-    func sendSuccessUpdate(message: String) {
-        textView.text = message
-    }
-    
-    func sendSuccessDelete(message: String) {
-        textView.text = message
-    }
-    
-    func sendError(message: String) {
-        textView.text = message
-    }
-    
-    func sendGoodBy(message: String) {
-        textView.text = message
+        localLabel.text = resultString
     }
     
 }
