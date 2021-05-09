@@ -7,11 +7,20 @@
 
 import Foundation
 
-protocol LocalizationHelperDelegate {
+protocol LocalizationHelperDelegate: AnyObject {
+    
+    /// отправить все занчения имеющиеся в словаре
     func sendSearch(resultString: String)
+    
+    /// отправить слова имеющиеся по искомому ключу и языку
     func sendWordsByKeyAndLanguage(string: String)
-//    func sendWordsByLanguage(_ language: String)
-//    func sendWordsBy(key: String)
+    
+    // отправить слова по искомому языку
+    func sendWordsByLanguage(_ string: String)
+    
+    /// отправить слова по искомогу ключу
+      func sendWordsByKey(string: String)
+    
 //    func sendError(message: String)
 //    func sendSuccessUpdate(message: String)
 //    func sendSuccessDelete(message: String)
@@ -22,12 +31,16 @@ protocol LocalizationHelperDelegate {
 class LocalizationHelper {
     
     private var dictionary: [String : [String : String]] = {
-        guard let dict = UserDefaults.standard.dictionaryStringsBy(key: Const.saveKey) else { return ["hello":["en":"Hello"]]
+        guard let dict = UserDefaults.standard.dictionaryStringsBy(key: Const.saveKey) else {
+            return [
+                "hello":["en":"Hello", "ru":"Привет", "ev":"היי.", "de":"Hallo"],
+                "bye":["en":"Bye", "ru":"Пока", "ev":"ביי.", "de":"Hallo"]
+            ]
         }
         return dict
     }()
     
-    var delegate: LocalizationHelperDelegate?
+    weak var delegate: LocalizationHelperDelegate? // Делегат всегда реализуем слабой ссылкой чтобы избежать утечек памяти
     private let consoleIO = ConsoleInputOutput()
     var command = CommandType.unowned
     var value = ""
@@ -126,11 +139,11 @@ extension LocalizationHelper {
             let string = dictionary.stringWordBy(key: secondParam, language: firstParam)
             delegate?.sendWordsByKeyAndLanguage(string: string)
         case .search where firstKey == .key:
-        let string = dictionary.stringWordsByLanguage(firstParam)
-            //delegate?.sendWordsBy(key: string)
+            let string = dictionary.stringWordsByKey(firstParam)
+            delegate?.sendWordsByKey(string: string)
         case .search where firstKey == .language:
             let string = dictionary.stringWordsByLanguage(firstParam)
-            //delegate?.sendWordsByLanguage(string)
+            delegate?.sendWordsByLanguage(string)
         case .search where itemsCount < 2:
             let string = dictionary.stringFromDictionary()
             delegate?.sendSearch(resultString: string)

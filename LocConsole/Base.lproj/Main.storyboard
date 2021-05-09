@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Localization View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocConsole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LocalizationViewController" customModule="LocConsole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,12 +50,12 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vbq-at-LnB">
                                         <rect key="frame" x="0.0" y="0.0" width="192" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsm-fz-JWM">
                                         <rect key="frame" x="202" y="0.0" width="192" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -86,9 +86,9 @@
                     <connections>
                         <outlet property="clearButton" destination="YnH-p0-Y1z" id="CrB-f2-jhu"/>
                         <outlet property="enterButton" destination="pGD-XO-dQ3" id="yIt-ij-CTP"/>
+                        <outlet property="keyTextField" destination="Vbq-at-LnB" id="nwF-0I-ojb"/>
+                        <outlet property="languageTextField" destination="Jsm-fz-JWM" id="2jI-49-GC7"/>
                         <outlet property="localLabel" destination="yiI-es-pdK" id="RGH-X2-c8U"/>
-                        <outletCollection property="textFields" destination="Vbq-at-LnB" collectionClass="NSMutableArray" id="uvd-Ld-7gf"/>
-                        <outletCollection property="textFields" destination="Jsm-fz-JWM" collectionClass="NSMutableArray" id="eQX-ZM-aVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

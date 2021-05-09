@@ -11,11 +11,12 @@
 		A57AAE45263D9E9F005EE737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57AAE44263D9E9F005EE737 /* Assets.xcassets */; };
 		A588F2832639E2C500B23C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588F2822639E2C500B23C34 /* AppDelegate.swift */; };
 		A588F2852639E2C500B23C34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588F2842639E2C500B23C34 /* SceneDelegate.swift */; };
-		A588F2872639E2C500B23C34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588F2862639E2C500B23C34 /* ViewController.swift */; };
+		A588F2872639E2C500B23C34 /* LocalizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588F2862639E2C500B23C34 /* LocalizationViewController.swift */; };
 		A588F28A2639E2C500B23C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A588F2882639E2C500B23C34 /* Main.storyboard */; };
 		A588F28F2639E2C600B23C34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A588F28D2639E2C600B23C34 /* LaunchScreen.storyboard */; };
 		A588F29A2639E2C700B23C34 /* LocConsoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588F2992639E2C700B23C34 /* LocConsoleTests.swift */; };
 		A588F2A52639E2C700B23C34 /* LocConsoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A588F2A42639E2C700B23C34 /* LocConsoleUITests.swift */; };
+		A59CA2AF2647E91700EBED90 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A59CA2AE2647E91700EBED90 /* .gitignore */; };
 		A5AA3067263B2BCB0008E45A /* ConsoleInputOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA3066263B2BCB0008E45A /* ConsoleInputOutput.swift */; };
 		A5AA306D263B2BD30008E45A /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA306C263B2BD30008E45A /* Const.swift */; };
 		A5AA3075263B2BDC0008E45A /* ModeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA3072263B2BDC0008E45A /* ModeType.swift */; };
@@ -52,7 +53,7 @@
 		A588F27F2639E2C500B23C34 /* LocConsole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocConsole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A588F2822639E2C500B23C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A588F2842639E2C500B23C34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A588F2862639E2C500B23C34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A588F2862639E2C500B23C34 /* LocalizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationViewController.swift; sourceTree = "<group>"; };
 		A588F2892639E2C500B23C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A588F28E2639E2C600B23C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A588F2902639E2C600B23C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		A588F2A02639E2C700B23C34 /* LocConsoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocConsoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A588F2A42639E2C700B23C34 /* LocConsoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocConsoleUITests.swift; sourceTree = "<group>"; };
 		A588F2A62639E2C700B23C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A59CA2AE2647E91700EBED90 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A5AA3066263B2BCB0008E45A /* ConsoleInputOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleInputOutput.swift; sourceTree = "<group>"; };
 		A5AA306C263B2BD30008E45A /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		A5AA3072263B2BDC0008E45A /* ModeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeType.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		A53C85BD263DA26F00E512E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A588F2862639E2C500B23C34 /* ViewController.swift */,
+				A588F2862639E2C500B23C34 /* LocalizationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +122,7 @@
 		A588F2762639E2C500B23C34 = {
 			isa = PBXGroup;
 			children = (
+				A59CA2AE2647E91700EBED90 /* .gitignore */,
 				A588F2812639E2C500B23C34 /* LocConsole */,
 				A588F2982639E2C700B23C34 /* LocConsoleTests */,
 				A588F2A32639E2C700B23C34 /* LocConsoleUITests */,
@@ -319,6 +322,7 @@
 				A588F28F2639E2C600B23C34 /* LaunchScreen.storyboard in Resources */,
 				A5AA3089263B2BEC0008E45A /* Localizable.strings in Resources */,
 				A588F28A2639E2C500B23C34 /* Main.storyboard in Resources */,
+				A59CA2AF2647E91700EBED90 /* .gitignore in Resources */,
 				A57AAE45263D9E9F005EE737 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A588F2872639E2C500B23C34 /* ViewController.swift in Sources */,
+				A588F2872639E2C500B23C34 /* LocalizationViewController.swift in Sources */,
 				A588F2832639E2C500B23C34 /* AppDelegate.swift in Sources */,
 				A57AAE33263D9949005EE737 /* UIView+cornerRadius.swift in Sources */,
 				A588F2852639E2C500B23C34 /* SceneDelegate.swift in Sources */,
